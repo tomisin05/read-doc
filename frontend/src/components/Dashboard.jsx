@@ -104,7 +104,7 @@ export default function Dashboard({ user }) {
     {
       id: "underlined",
       label: "Underlined",
-      description: "Keeps underlined runs",
+      description: "Keeps underlined text",
       icon: "◈",
     },
   ];
@@ -116,7 +116,11 @@ export default function Dashboard({ user }) {
       {/* Header */}
       <header className="dash-header">
         <div className="dash-brand">
-          <img src="/logo-horizontal.svg" alt="read-doc" className="dash-logo-horizontal" />
+          <img
+            src="/logo-horizontal.svg"
+            alt="read-doc"
+            className="dash-logo-horizontal"
+          />
         </div>
         <div className="dash-user">
           <span className="user-email">{user.displayName || user.email}</span>
