@@ -116,7 +116,7 @@ export default function Dashboard({ user }) {
       {/* Header */}
       <header className="dash-header">
         <div className="dash-brand">
-          <span className="dash-brand-name">Read-Doc</span>
+          <img src="/logo-horizontal.svg" alt="read-doc" className="dash-logo-horizontal" />
         </div>
         <div className="dash-user">
           <span className="user-email">{user.displayName || user.email}</span>

@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 80" width="520" height="80">
+  <defs>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softglow">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="520" height="80" fill="#0a0a0f" rx="12"/>
+
+  <!-- Subtle grid -->
+  <g opacity="0.035" stroke="#c8ff00" stroke-width="0.5">
+    <line x1="0" y1="20" x2="520" y2="20"/>
+    <line x1="0" y1="40" x2="520" y2="40"/>
+    <line x1="0" y1="60" x2="520" y2="60"/>
+  </g>
+
+  <!-- Glow bloom -->
+  <ellipse cx="48" cy="40" rx="32" ry="28" fill="#c8ff00" opacity="0.05" filter="url(#softglow)"/>
+
+  <!-- Mini document icon -->
+  <!-- Doc body -->
+  <path d="M20 12 L52 12 L64 24 L64 68 L20 68 Z" fill="#0f0f1a" stroke="#1e1e2e" stroke-width="1.2"/>
+  <!-- Fold corner -->
+  <path d="M52 12 L52 24 L64 24" fill="#141420" stroke="#c8ff00" stroke-width="0.7" opacity="0.7"/>
+  <!-- Corner dot -->
+  <circle cx="52" cy="24" r="2" fill="#c8ff00" filter="url(#glow)"/>
+  <!-- Left accent stripe -->
+  <rect x="20" y="12" width="3" height="56" fill="#c8ff00" opacity="0.12"/>
+  <rect x="20" y="12" width="3" height="16" fill="#c8ff00" opacity="0.9" filter="url(#glow)"/>
+
+  <!-- Content lines in doc -->
+  <!-- Tag line -->
+  <rect x="28" y="32" width="28" height="3.5" rx="1" fill="#e8e8f0" opacity="0.85"/>
+  <!-- Highlighted line -->
+  <rect x="28" y="39" width="24" height="3.5" rx="1" fill="#c8ff00" opacity="0.9" filter="url(#glow)"/>
+  <!-- Underlined line -->
+  <rect x="28" y="46" width="20" height="3.5" rx="1" fill="#e8e8f0" opacity="0.7"/>
+  <rect x="28" y="50" width="20" height="1" rx="0.5" fill="#e8e8f0" opacity="0.4"/>
+  <!-- Dim line -->
+  <rect x="28" y="56" width="26" height="3.5" rx="1" fill="#2a2a3a" opacity="0.8"/>
+
+  <!-- Bottom border accent -->
+  <line x1="20" y1="68" x2="64" y2="68" stroke="#c8ff00" stroke-width="0.8" opacity="0.3"/>
+
+  <!-- Wordmark -->
+  <!-- "read" -->
+  <text
+    x="86"
+    y="50"
+    font-family="'Courier New', Courier, monospace"
+    font-size="30"
+    font-weight="700"
+    letter-spacing="-0.5"
+    fill="#c8ff00"
+    filter="url(#glow)"
+  >read</text>
+
+  <!-- hyphen -->
+  <text
+    x="186"
+    y="50"
+    font-family="'Courier New', Courier, monospace"
+    font-size="30"
+    font-weight="400"
+    fill="#c8ff00"
+    opacity="0.35"
+  >-</text>
+
+  <!-- "doc" -->
+  <text
+    x="202"
+    y="50"
+    font-family="'Courier New', Courier, monospace"
+    font-size="30"
+    font-weight="700"
+    letter-spacing="-0.5"
+    fill="#e8e8f0"
+  >doc</text>
+
+  <!-- Divider -->
+  <line x1="306" y1="22" x2="306" y2="58" stroke="#1e1e2e" stroke-width="1"/>
+
+  <!-- Tagline right side -->
+  <text x="322" y="36" font-family="'Courier New', monospace" font-size="9" letter-spacing="2.5" fill="#3d3d50">DEBATE CARD</text>
+  <text x="322" y="52" font-family="'Courier New', monospace" font-size="9" letter-spacing="2.5" fill="#3d3d50">EXTRACTOR</text>
+
+  <!-- Corner marks -->
+  <g stroke="#c8ff00" stroke-width="0.8" opacity="0.2" fill="none">
+    <path d="M6 6 L14 6 M6 6 L6 14"/>
+    <path d="M514 6 L506 6 M514 6 L514 14"/>
+    <path d="M6 74 L14 74 M6 74 L6 66"/>
+    <path d="M514 74 L506 74 M514 74 L514 66"/>
+  </g>
+</svg>

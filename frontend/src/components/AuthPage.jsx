@@ -47,12 +47,8 @@ export default function AuthPage() {
 
       <div className="auth-container">
         <div className="auth-brand">
-          <div className="auth-logo">
-            <span className="logo-bracket">[</span>
-            <span className="logo-text">VX</span>
-            <span className="logo-bracket">]</span>
-          </div>
-          <h1 className="auth-title">Verbatim<br />Extractor</h1>
+          <img src="/logo.svg" alt="read-doc logo" className="auth-logo-img" />
+          <h1 className="auth-title">read-doc</h1>
           <p className="auth-subtitle">Strip the fluff. Keep the proof.</p>
         </div>
 
