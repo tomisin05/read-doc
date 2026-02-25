@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+python-docx
+lxml
+firebase-admin
+python-multipart
+python-dotenv
