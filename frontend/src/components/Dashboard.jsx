@@ -48,7 +48,7 @@ export default function Dashboard({ user }) {
       setStage("processing");
 
       // 2. Call backend to process
-      const response = await fetch(`${API_BASE}/api/process`, {
+      const response = await fetch(`${API_BASE}/process`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
