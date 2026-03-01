@@ -7,7 +7,7 @@ const API_BASE = import.meta.env.VITE_API_URL || "/api";
 
 export default function Dashboard({ user }) {
   const [file, setFile] = useState(null);
-  const [mode, setMode] = useState("both"); // 'both' | 'highlighted' | 'underlined'
+  const [mode, setMode] = useState(null); // null | 'highlighted' | 'underlined'
   const [stage, setStage] = useState("idle"); // idle | uploading | processing | done | error
   const [downloadUrl, setDownloadUrl] = useState(null);
   const [outputName, setOutputName] = useState("");
@@ -48,7 +48,7 @@ export default function Dashboard({ user }) {
       setStage("processing");
 
       // 2. Call backend to process
-      const response = await fetch(`${API_BASE}/process`, {
+      const response = await fetch(`${API_BASE}/api/process`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -74,6 +74,14 @@ export default function Dashboard({ user }) {
       setDownloadUrl(result.download_url);
       setOutputName(result.output_filename);
       setStage("done");
+
+      // Auto-download
+      const link = document.createElement("a");
+      link.href = result.download_url;
+      link.download = result.output_filename;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
     } catch (err) {
       setErrorMsg(err.message || "Something went wrong");
       setStage("error");
@@ -236,7 +244,7 @@ export default function Dashboard({ user }) {
                 <button
                   className="btn-process"
                   onClick={handleProcess}
-                  disabled={!file}
+                  disabled={!file || !mode}
                 >
                   <svg
                     width="20"
@@ -250,6 +258,12 @@ export default function Dashboard({ user }) {
                   </svg>
                   Run Extractor
                 </button>
+              )}
+
+              {!mode && file && stage === "idle" && (
+                <p className="mode-required">
+                  Please select an extraction mode
+                </p>
               )}
 
               {isProcessing && (

@@ -616,6 +616,17 @@ html, body, #root {
   box-shadow: none;
 }
 
+.mode-required {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--accent);
+  text-align: center;
+  padding: 8px;
+  background: var(--accent-dim);
+  border-radius: var(--radius);
+  width: 100%;
+}
+
 /* ===== PROCESSING ===== */
 .processing-state {
   display: flex;
